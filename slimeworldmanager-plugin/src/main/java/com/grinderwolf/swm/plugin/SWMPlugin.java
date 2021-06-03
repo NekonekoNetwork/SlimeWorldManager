@@ -6,7 +6,6 @@ import com.grinderwolf.swm.api.SlimePlugin;
 import com.grinderwolf.swm.api.exceptions.*;
 import com.grinderwolf.swm.api.loaders.SlimeLoader;
 import com.grinderwolf.swm.api.world.SlimeWorld;
-import com.grinderwolf.swm.api.world.properties.SlimeProperties;
 import com.grinderwolf.swm.api.world.properties.SlimePropertyMap;
 import com.grinderwolf.swm.nms.CraftSlimeWorld;
 import com.grinderwolf.swm.nms.SlimeNMS;
@@ -22,7 +21,6 @@ import com.grinderwolf.swm.plugin.upgrade.WorldUpgrader;
 import com.grinderwolf.swm.plugin.world.WorldUnlocker;
 import com.grinderwolf.swm.plugin.world.importer.WorldImporter;
 import lombok.Getter;
-import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.Difficulty;
 import org.bukkit.World;
@@ -33,8 +31,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.*;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import static com.grinderwolf.swm.api.world.properties.SlimeProperties.*;
 
@@ -50,7 +46,7 @@ public class SWMPlugin extends JavaPlugin implements SlimePlugin {
     private static boolean checkIsPaper() {
         try {
             return Class.forName("com.destroystokyo.paper.PaperConfig") != null;
-        } catch(ClassNotFoundException ex) {
+        } catch (ClassNotFoundException ex) {
             return false;
         }
     }
@@ -113,8 +109,6 @@ public class SWMPlugin extends JavaPlugin implements SlimePlugin {
             this.setEnabled(false);
             return;
         }
-
-        new Metrics(this);
 
         final CommandManager commandManager = new CommandManager();
         final PluginCommand swmCommand = getCommand("swm");
