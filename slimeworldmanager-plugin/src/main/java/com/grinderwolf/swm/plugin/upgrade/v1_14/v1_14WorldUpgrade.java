@@ -1,24 +1,16 @@
 package com.grinderwolf.swm.plugin.upgrade.v1_14;
 
-import com.flowpowered.nbt.ByteTag;
-import com.flowpowered.nbt.CompoundMap;
-import com.flowpowered.nbt.CompoundTag;
-import com.flowpowered.nbt.IntTag;
-import com.flowpowered.nbt.StringTag;
+import com.flowpowered.nbt.*;
 import com.grinderwolf.swm.api.world.SlimeChunk;
 import com.grinderwolf.swm.api.world.SlimeChunkSection;
 import com.grinderwolf.swm.nms.CraftSlimeWorld;
 import com.grinderwolf.swm.plugin.upgrade.Upgrade;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class v1_14WorldUpgrade implements Upgrade {
 
-    private static final int[] VILLAGER_XP = { 0, 10, 50, 100, 150 };
+    private static final int[] VILLAGER_XP = {0, 10, 50, 100, 150};
 
     private static final Map<String, String> oldToNewMap = new HashMap<>();
     private static final Map<String, String> newToOldMap = new HashMap<>();
@@ -221,33 +213,33 @@ public class v1_14WorldUpgrade implements Upgrade {
     private int[] getVillagerProfession(String profession) {
         switch (profession) {
             case "minecraft:farmer":
-                return new int[] { 0, 1 };
+                return new int[]{0, 1};
             case "minecraft:fisherman":
-                return new int[] { 0, 2 };
+                return new int[]{0, 2};
             case "minecraft:shepherd":
-                return new int[] { 0, 3 };
+                return new int[]{0, 3};
             case "minecraft:fletcher":
-                return new int[] { 0, 4 };
+                return new int[]{0, 4};
             case "minecraft:librarian":
-                return new int[] { 1, 1 };
+                return new int[]{1, 1};
             case "minecraft:cartographer":
-                return new int[] { 1, 2 };
+                return new int[]{1, 2};
             case "minecraft:cleric":
-                return new int[] { 2, 1 };
+                return new int[]{2, 1};
             case "minecraft:armorer":
-                return new int[] { 3, 1 };
+                return new int[]{3, 1};
             case "minecraft:weaponsmith":
-                return new int[] { 3, 2 };
+                return new int[]{3, 2};
             case "minecraft:toolsmith":
-                return new int[] { 3, 3 };
+                return new int[]{3, 3};
             case "minecraft:butcher":
-                return new int[] { 4, 1 };
+                return new int[]{4, 1};
             case "minecraft:leatherworker":
-                return new int[] { 4, 2 };
+                return new int[]{4, 2};
             case "minecraft:nitwit":
-                return new int[] { 5, 1 };
+                return new int[]{5, 1};
             default:
-                return new int[] { 0, 0 };
+                return new int[]{0, 0};
         }
     }
 
