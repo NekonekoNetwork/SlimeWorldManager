@@ -6,6 +6,7 @@
     <artifactId>slimeworldmanager</artifactId>
     <packaging>pom</packaging>
     <version>2.6.2-SNAPSHOT</version>
+
     <modules>
         <module>slimeworldmanager-api</module>
         <module>slimeworldmanager-nms-common</module>
@@ -19,16 +20,8 @@
 
     <repositories>
         <repository>
-            <id>spigot-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-        </repository>
-        <repository>
-            <id>papermc</id>
-            <url>https://papermc.io/repo/repository/maven-public/</url>
-        </repository>
-        <repository>
-            <id>glaremasters</id>
-            <url>https://repo.glaremasters.me/repository/concuncan/</url>
+            <id>nekonekonetwork</id>
+            <url>https://repo.nekonekoserver.net/repository/public/</url>
         </repository>
     </repositories>
 
@@ -64,15 +57,14 @@
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
-  <distributionManagement>
+    <distributionManagement>
         <repository>
-            <id>releases</id>
-            <url>https://repo.rapture.pw/repository/maven-releases/</url>
+            <id>nekonekonetwork</id>
+            <url>https://repo.nekonekoserver.net/repository/releases/</url>
         </repository>
         <snapshotRepository>
-            <id>snapshots</id>
-            <url>https://repo.rapture.pw/repository/maven-snapshots/</url>
+            <id>nekonekonetwork</id>
+            <url>https://repo.nekonekoserver.net/repository/releases/</url>
         </snapshotRepository>
-  </distributionManagement>
-
+    </distributionManagement>
 </project>
