@@ -36,15 +36,15 @@ public class ConfigManager {
         copyDefaultConfigs();
 
         mainConfigLoader = YamlConfigurationLoader.builder().path(MAIN_FILE.toPath())
-          .nodeStyle(NodeStyle.BLOCK).headerMode(HeaderMode.PRESERVE).build();
+                .nodeStyle(NodeStyle.BLOCK).headerMode(HeaderMode.PRESERVE).build();
         mainConfig = mainConfigLoader.load().get(TypeToken.get(MainConfig.class));
 
         worldConfigLoader = YamlConfigurationLoader.builder().path(WORLDS_FILE.toPath())
-          .nodeStyle(NodeStyle.BLOCK).headerMode(HeaderMode.PRESERVE).build();
+                .nodeStyle(NodeStyle.BLOCK).headerMode(HeaderMode.PRESERVE).build();
         worldConfig = worldConfigLoader.load().get(TypeToken.get(WorldsConfig.class));
 
         YamlConfigurationLoader datasourcesConfigLoader = YamlConfigurationLoader.builder().path(SOURCES_FILE.toPath())
-          .nodeStyle(NodeStyle.BLOCK).headerMode(HeaderMode.PRESERVE).build();
+                .nodeStyle(NodeStyle.BLOCK).headerMode(HeaderMode.PRESERVE).build();
         datasourcesConfig = datasourcesConfigLoader.load().get(TypeToken.get(DatasourcesConfig.class));
 
         mainConfigLoader.save(mainConfigLoader.createNode().set(TypeToken.get(MainConfig.class), mainConfig));
